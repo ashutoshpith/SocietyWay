@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  flat_no: MyString
+  bhk_type: MyString
+  tenant: one
+  owner: one
+
+two:
+  flat_no: MyString
+  bhk_type: MyString
+  tenant: two
+  owner: two

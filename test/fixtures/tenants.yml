@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  entry: 2018-09-14
+  leaving: 2018-09-14
+  parking: MyString
+  room_no: MyString
+  admin: one
+
+two:
+  first_name: MyString
+  last_name: MyString
+  entry: 2018-09-14
+  leaving: 2018-09-14
+  parking: MyString
+  room_no: MyString
+  admin: two

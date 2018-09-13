@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @billing.amount %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @billing.type %>
+</p>
+
+<p>
+  <strong>Due date:</strong>
+  <%= @billing.due_date %>
+</p>
+
+<p>
+  <strong>Filled:</strong>
+  <%= @billing.filled %>
+</p>
+
+<p>
+  <strong>Tenant:</strong>
+  <%= @billing.tenant %>
+</p>
+
+<%= link_to 'Edit', edit_billing_path(@billing) %> |
+<%= link_to 'Back', billings_path %>

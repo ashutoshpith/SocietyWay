@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Flat no:</strong>
+  <%= @flat.flat_no %>
+</p>
+
+<p>
+  <strong>Bhk type:</strong>
+  <%= @flat.bhk_type %>
+</p>
+
+<p>
+  <strong>Tenant:</strong>
+  <%= @flat.tenant %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @flat.owner %>
+</p>
+
+<%= link_to 'Edit', edit_flat_path(@flat) %> |
+<%= link_to 'Back', flats_path %>
