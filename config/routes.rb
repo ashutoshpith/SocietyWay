@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :members
   resources :tsconnects
   get 'home/index'
   resources :billings

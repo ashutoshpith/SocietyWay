@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_13_194948) do
+ActiveRecord::Schema.define(version: 2018_09_13_202342) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -46,6 +46,18 @@ ActiveRecord::Schema.define(version: 2018_09_13_194948) do
     t.index ["tenant_id"], name: "index_flats_on_tenant_id"
   end
 
+  create_table "members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_members_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
+  end
+
   create_table "owners", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "last_name"
     t.string "first_name"
@@ -62,17 +74,6 @@ ActiveRecord::Schema.define(version: 2018_09_13_194948) do
     t.decimal "amount", precision: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "t_s_connects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "billing_id"
-    t.bigint "shop_id"
-    t.bigint "tenant_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["billing_id"], name: "index_t_s_connects_on_billing_id"
-    t.index ["shop_id"], name: "index_t_s_connects_on_shop_id"
-    t.index ["tenant_id"], name: "index_t_s_connects_on_tenant_id"
   end
 
   create_table "tenants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -102,9 +103,6 @@ ActiveRecord::Schema.define(version: 2018_09_13_194948) do
   add_foreign_key "billings", "tenants"
   add_foreign_key "flats", "owners"
   add_foreign_key "flats", "tenants"
-  add_foreign_key "t_s_connects", "billings"
-  add_foreign_key "t_s_connects", "shops"
-  add_foreign_key "t_s_connects", "tenants"
   add_foreign_key "tenants", "admins"
   add_foreign_key "tsconnects", "billings"
   add_foreign_key "tsconnects", "shops"
