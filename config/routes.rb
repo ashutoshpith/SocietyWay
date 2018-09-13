@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :members
   resources :tsconnects
   get 'home/index'
+  get 'home/member'
+  get 'home/admin'
   resources :billings
   resources :flats
   resources :tenants
