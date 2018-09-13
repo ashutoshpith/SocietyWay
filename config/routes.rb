@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  resources :tsconnects
   get 'home/index'
-  resources :t_s_connects
   resources :billings
   resources :flats
   resources :tenants

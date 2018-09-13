@@ -1,5 +1,5 @@
 
-<%= simple_form_for(@t_s_connect) do |f| %>
+<%= simple_form_for(@tsconnect) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 

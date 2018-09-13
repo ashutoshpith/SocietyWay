@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Billing:</strong>
+  <%= @tsconnect.billing %>
+</p>
+
+<p>
+  <strong>Shop:</strong>
+  <%= @tsconnect.shop %>
+</p>
+
+<p>
+  <strong>Tenant:</strong>
+  <%= @tsconnect.tenant %>
+</p>
+
+<%= link_to 'Edit', edit_tsconnect_path(@tsconnect) %> |
+<%= link_to 'Back', tsconnects_path %>

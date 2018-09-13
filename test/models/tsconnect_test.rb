@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TSConnectTest < ActiveSupport::TestCase
+class TsconnectTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

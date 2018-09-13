@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_13_193835) do
+ActiveRecord::Schema.define(version: 2018_09_13_194948) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -88,6 +88,17 @@ ActiveRecord::Schema.define(version: 2018_09_13_193835) do
     t.index ["admin_id"], name: "index_tenants_on_admin_id"
   end
 
+  create_table "tsconnects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "billing_id"
+    t.bigint "shop_id"
+    t.bigint "tenant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["billing_id"], name: "index_tsconnects_on_billing_id"
+    t.index ["shop_id"], name: "index_tsconnects_on_shop_id"
+    t.index ["tenant_id"], name: "index_tsconnects_on_tenant_id"
+  end
+
   add_foreign_key "billings", "tenants"
   add_foreign_key "flats", "owners"
   add_foreign_key "flats", "tenants"
@@ -95,4 +106,7 @@ ActiveRecord::Schema.define(version: 2018_09_13_193835) do
   add_foreign_key "t_s_connects", "shops"
   add_foreign_key "t_s_connects", "tenants"
   add_foreign_key "tenants", "admins"
+  add_foreign_key "tsconnects", "billings"
+  add_foreign_key "tsconnects", "shops"
+  add_foreign_key "tsconnects", "tenants"
 end
