@@ -4,9 +4,9 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.association :billing %>
-    <%= f.association :shop %>
-    <%= f.association :tenant %>
+    <%= f.association :billing, label_method: :amount %>
+    <%= f.association :shop, label_method: :amount %>
+    <%= f.association :tenant, label_method: :first_name %>
   </div>
 
   <div class="form-actions">

@@ -15,9 +15,9 @@
   <tbody>
     <% @tsconnects.each do |tsconnect| %>
       <tr>
-        <td><%= tsconnect.billing %></td>
-        <td><%= tsconnect.shop %></td>
-        <td><%= tsconnect.tenant %></td>
+        <td><%= tsconnect.billing.amount %></td>
+        <td><%= tsconnect.shop.amount %></td>
+        <td><%= tsconnect.tenant.first_name %></td>
         <td><%= link_to 'Show', tsconnect %></td>
         <td><%= link_to 'Edit', edit_tsconnect_path(tsconnect) %></td>
         <td><%= link_to 'Destroy', tsconnect, method: :delete, data: { confirm: 'Are you sure?' } %></td>

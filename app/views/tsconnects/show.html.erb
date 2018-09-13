@@ -2,17 +2,17 @@
 
 <p>
   <strong>Billing:</strong>
-  <%= @tsconnect.billing %>
+  <%= @tsconnect.billing.amount %>
 </p>
 
 <p>
   <strong>Shop:</strong>
-  <%= @tsconnect.shop %>
+  <%= @tsconnect.shop.amount %>
 </p>
 
 <p>
   <strong>Tenant:</strong>
-  <%= @tsconnect.tenant %>
+  <%= @tsconnect.tenant.first_name %>
 </p>
 
 <%= link_to 'Edit', edit_tsconnect_path(@tsconnect) %> |
