@@ -69,6 +69,6 @@ class BillingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def billing_params
-      params.require(:billing).permit(:amount, :type, :due_date, :filled, :tenant_id)
+      params.require(:billing).permit(:amount, :kind, :due_date, :filled, :tenant_id)
     end
 end

@@ -18,8 +18,8 @@
       <tr>
         <td><%= flat.flat_no %></td>
         <td><%= flat.bhk_type %></td>
-        <td><%= flat.tenant %></td>
-        <td><%= flat.owner %></td>
+        <td><%= flat.tenant.first_name %></td>
+        <td><%= flat.owner.first_name %></td>
         <td><%= link_to 'Show', flat %></td>
         <td><%= link_to 'Edit', edit_flat_path(flat) %></td>
         <td><%= link_to 'Destroy', flat, method: :delete, data: { confirm: 'Are you sure?' } %></td>

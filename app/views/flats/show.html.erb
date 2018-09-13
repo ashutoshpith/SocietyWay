@@ -12,12 +12,12 @@
 
 <p>
   <strong>Tenant:</strong>
-  <%= @flat.tenant %>
+  <%= @flat.tenant.first_name %>
 </p>
 
 <p>
   <strong>Owner:</strong>
-  <%= @flat.owner %>
+  <%= @flat.owner.first_name %>
 </p>
 
 <%= link_to 'Edit', edit_flat_path(@flat) %> |

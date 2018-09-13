@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_13_190651) do
+ActiveRecord::Schema.define(version: 2018_09_13_193835) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,12 +26,12 @@ ActiveRecord::Schema.define(version: 2018_09_13_190651) do
 
   create_table "billings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.decimal "amount", precision: 10
-    t.string "type"
     t.date "due_date"
     t.integer "filled"
     t.bigint "tenant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "kind"
     t.index ["tenant_id"], name: "index_billings_on_tenant_id"
   end
 

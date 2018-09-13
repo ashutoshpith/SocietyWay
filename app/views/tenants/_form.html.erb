@@ -10,7 +10,7 @@
     <%= f.input :leaving %>
     <%= f.input :parking %>
     <%= f.input :room_no %>
-    <%= f.association :admin %>
+    <%= f.association :admin, label_method: :email %>
   </div>
 
   <div class="form-actions">
